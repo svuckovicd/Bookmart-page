@@ -1,0 +1,117 @@
+//variables
+
+$aBlue:  hsl(231, 69%, 60%);
+$SofRed: hsl(0, 94%, 66%);
+$Blue: hsl(229, 8%, 60%);
+$DarkBlue: hsl(229, 31%, 21%);
+$light-grayish: hsl(220, 16%, 96%);
+$background-opacity:0.9;
+
+//mixins
+@mixin easeOut{
+    transition: all 0.5s ease-out;
+}
+@mixin easeIn{
+    transition: all 0.8s ease-in;
+}
+//Delay each li item slide by 0.3s
+@keyframes text {
+    from  {transform:translateX(1000%);
+}    
+    
+    to{transform: translateX(0);}
+}
+@for $x from 1 through 6 {
+    .text:nth-child(#{$x}) {
+        animation: text $x * 300ms;
+    }
+    }
+     //Background cover 
+@mixin showNav {
+    &.bg-img{
+    &::after {
+        content: '';
+        position:absolute;
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        width:100%;
+        height:720vh;
+        z-index:1;
+      background:rgba($DarkBlue,$background-opacity);
+        
+     }
+    }}
+//buttons 
+.btn {
+    margin-top:30px;
+    height:45px;
+    padding:10px;
+    border-radius:8px;
+    font-weight: bold;
+    color:$Blue;
+    @include easeOut;
+    cursor: pointer;
+    &.lg{
+    width:220px;
+    
+    }
+    &.silver{
+      background:$light-grayish;
+      border:none;
+      &:hover{
+          border:1px solid $DarkBlue;
+         }
+   
+    }
+    &.info{
+     width:120px;
+     height:50px;
+     color:#fff;
+     border:none;
+     background:$aBlue;
+ }
+    &.red{
+     width:120px;
+     box-shadow: 0px 0px 5px  $DarkBlue;
+     background:$SofRed;
+     border:1px solid $SofRed;
+     color:#fff;
+     &:hover{
+         background:#fff;
+         color:$SofRed;}}
+    &.blue{
+    background:$aBlue;
+    color:#fff;
+    &:hover{
+        background:#fff;
+        border:1px solid silver;
+        color:$DarkBlue;}}}
+
+
+
+
+//media 
+
+@mixin mediaSm{
+    @media screen and(max-width: 500px){
+        @content;
+    }
+}
+@mixin mediaMd{
+    @media screen and(max-width: 800px){
+        @content;
+    }
+}
+@mixin mediaLg{
+    @media screen and(min-width:768px) and (max-width:1170px){
+        @content;
+    }
+}
+@mixin mediaXL{
+    @media screen and(max-width: 1171px){
+        @content;
+    }
+}
+

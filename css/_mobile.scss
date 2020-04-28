@@ -1,0 +1,179 @@
+@include  mediaLg{
+   
+     main {.text-part{
+            margin-left:60px;}
+         .img{
+              height: 290px;
+              top:60px;
+             img{
+                 top:-60px;
+                 left:-28px;
+                 width:100%;
+             }}}.section-1 {.page{.img{img{
+                left:10px;
+                 width:100%; } }}}}
+
+@include mediaMd{
+    .btn {
+        font-size:12.5px;
+        &.lg{width:170px;}}
+    body{
+        font-size:16px;
+    }h1,h2,h3{    &.lg-heading {
+             font-size:2rem;}}
+    main{ .img{   height: 200px; top:30px; 
+            img{top:-50px; } }}
+    .section-2 {
+       article {
+            grid-template-columns:repeat(2,290px);}}}
+
+
+
+@include mediaSm{
+    //buttons
+    .btn {
+        font-size:12.5px;
+        &.lg{width:140px;}}
+//headings
+h1,h2,h3,h4 {
+    color:$DarkBlue;
+    margin:0;
+    &.lg-heading { font-size:2.3rem;}
+    }
+    header{
+        min-width:100%;
+        position:relative;
+        .logo{
+            
+            margin-left:40px;
+            z-index: 3;
+            img{
+                background:#fff;
+            }
+        }}
+      
+      
+        //main 
+        main {
+            padding-top:60px;
+            text-align: center;
+            flex-direction: column-reverse;
+            // justify-content: center;
+            //---text part
+            .text-part{
+                     flex-grow:1;
+                     flex-basis: 300px;
+                     margin-top:50px;
+                     margin-left:0px;
+                     P{
+                         width:90%;       }}
+        
+            //img-side
+            .img{
+              flex:0.5;
+              flex-basis: 300px;
+              position: static;
+            //   transform:translateX(100%);
+            // opacity: 0;
+              img{
+                  width:100%;
+                  position: static;  } } }
+        
+             //section ------- 1
+             section {
+                padding-top:170px;
+            
+            }
+            //part 1
+            .section-1 {
+               article{
+                   width:90%;
+                   ul{
+                       flex-direction: column;
+                       text-align: center;
+                        }}
+               //page side
+             .page{
+                 display:none;
+                 flex-direction: column-reverse;
+                 &.active{
+                    display:flex;
+                 }
+                 //text part
+                .text-part{
+                    flex:1;
+                    text-align: center;
+                    padding-left:0px;
+                    P{
+                        width:100%;
+                    }}
+            //img -part
+            .img{
+             flex-basis: 200px;
+             position: relative;;
+             border-bottom-right-radius: 100px;
+            //   transform:translateX(-100%);
+            // opacity: 0;
+             img{
+            width:80%;
+            position: static;;
+                 }}     }}
+                
+                //section ------- 2
+                .section-2 {
+                    .text-part{
+                        width:100%;
+                    }
+                    article {
+                        display:grid;
+                        grid-template-columns:repeat(1,290px);
+                        .card{
+                            box-shadow:2px 2px 2px 2px $light-grayish; 
+                            }}}
+                
+                            //section ------ 3
+                            //part --3
+.section-3 {
+    article{
+        width:100%;
+      .text-part{
+          width:80%;
+      }     
+      .quest{   
+        p{ font-size:16px;
+           line-height:1.8;  }}}}
+                
+        //logo nav social     
+            .footer {
+                article {
+                    background:$aBlue;   
+                    text-align: center;
+                    color:#fff;
+                    span{
+                        font-size:1rem;}
+                    h2{font-size:15px;}
+             .form{width:100%;.inp{margin-right:0px;
+              input{
+                 width:100%; }   }}}
+                footer{
+                 background:$DarkBlue;
+                 flex-direction: column;
+                 .logo{
+                     flex:1;
+                     text-align: center;}
+                 ul{ 
+                     flex-direction: column;
+                     text-align: center;
+                     //
+                     li{
+                         margin:15px 30px 15px 0px;
+                         }}
+                 .social{
+                    text-align: center;
+                    padding:0px;
+                    margin:0px;
+                    img{
+                        margin-right:0px;
+                        margin:0px 10px;}}}}
+                    }
+
