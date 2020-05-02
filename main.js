@@ -7,7 +7,7 @@ const navLi = menuBtn.querySelectorAll('ul li');
 const btnLines = document.querySelectorAll('.btn-line');
 const bgItem = document.body;
 
-// NAVBAR FOR MOBILE
+// ============= Navbar menu ===================
 
 navMenu.addEventListener('click', toggleMenu);
 
@@ -33,9 +33,8 @@ function toggleMenu() {
     }
 }
 
-// ================================ MAIN
 
-// MAIN ANIMATION
+//  ===============ON LOAD ANIMATION 
 function init() {
     const imgSlide = document.querySelector('#img');
     const textAnim = document.querySelector('#text-anim');
@@ -50,14 +49,13 @@ window.addEventListener('load', init)
 
 
 
-//  =========================== SECTION PAGE
-//  SECTION -- 1
+//  =========================== Features click
+
 
 
 const list = document.querySelectorAll('.list .li');
 list.forEach(li => li.addEventListener('click', clickFeatures));
 
-// click Features  
 
 function clickFeatures() {
     const pages = document.querySelectorAll('.page');
@@ -77,38 +75,40 @@ function clickFeatures() {
     })
 }
 
+// =========================================FAQ QUESTIONS 
 
-// ==================  SECTION -3
+const quest = document.querySelectorAll('.quest');
+const lines = document.querySelectorAll('.x');
+quest.forEach(qs => qs.addEventListener('click', clickQuest));
 
-// DOM ITEMS
-const arowQest = document.querySelectorAll('.arow');
-const answP = document.querySelectorAll('.answ');
+function clickQuest(e) {
 
-arowQest.forEach(ar => ar.addEventListener('click', toggleQuests));
-let showQuest = false;
+    let answ = document.querySelector(this.dataset.qs);
+    let answer = document.querySelectorAll('.answ');
+    let arow = this.querySelector('.x');
 
-function toggleQuests() {
-
-    let panelTag = document.querySelector(this.dataset.qs);
-    let line = this.querySelectorAll('.line')
-    answP.forEach(answ => {
-        if (answ == panelTag) {
-            line.forEach(line => line.classList.toggle('close'));
-            if (!showQuest) {
-                answ.classList.add('show')
-                showQuest = true
-            } else {
-                answ.classList.remove('show')
-                showQuest = false
-            }
+    lines.forEach(line => {
+        if (arow == line) {
+            arow.classList.toggle('close')
+        } else {
+            line.classList.remove('close')
         }
     })
 
+    answer.forEach(an => {
+        if (answ == an) {
+            answ.classList.toggle('show')
+        } else {
+            an.classList.remove('show')
+        }
+    });
 }
 
 
+
+
 /*
-   CHECK VALIDATION MAIL
+ ======================================= FORM VALIDATIONS
 */
 
 
